@@ -1,9 +1,9 @@
 import * as Styled from './styles';
 function Home() {
   return (
-    <div className="App">
+    <div>
       <Styled.Wrapper background="gold">
-        <h1>Hello Word</h1>
+        <h1>Secret Word</h1>
       </Styled.Wrapper>
     </div>
   );

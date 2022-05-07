@@ -9,6 +9,12 @@ export const GlobalStyles = createGlobalStyle`
   body {
     ${({ theme }) => css`
       background: ${theme.colors.secondaryBg};
+      font-family: Helvetica;
+      color: #fff;
     `}
+  }
+
+  html, body {
+    height: 100%;
   }
 `;
