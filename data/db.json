@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": 2,
+      "name": "Calça vermelha",
+      "price": 90
+    },
+    {
+      "id": 3,
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "name": "Blusa Simples",
+      "price": "12.99",
+      "id": 4
+    },
+    {
+      "name": "Bermuda Jeans",
+      "price": "13",
+      "id": 5
+    },
+    {
+      "name": "Vestido Longo",
+      "price": "100",
+      "id": 6
+    },
+    {
+      "name": "Vestido Curto",
+      "price": "60",
+      "id": 7
+    },
+    {
+      "name": "Camisa P",
+      "price": "80",
+      "id": 8
+    },
+    {
+      "name": "Camisa M",
+      "price": "99",
+      "id": 11
+    }
+  ]
+}

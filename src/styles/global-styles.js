@@ -11,4 +11,8 @@ export const GlobalStyles = createGlobalStyle`
       background: ${theme.colors.secondaryBg};
     `}
   }
+
+  html, body {
+    height: 100%;
+  }
 `;
