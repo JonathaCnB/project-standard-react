@@ -1,12 +1,25 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import * as Styled from './styles';
-function Home() {
+import Home from '../Home';
+import About from '../About';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
+function App() {
   return (
-    <div className="App">
-      <Styled.Wrapper background="gold">
-        <h1>Hello Word</h1>
-      </Styled.Wrapper>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Styled.Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Styled.Container>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
 
-export default Home;
+export default App;
