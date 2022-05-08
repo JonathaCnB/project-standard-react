@@ -10,6 +10,7 @@ import Info from '../Info';
 import NotFound from '../NotFound';
 import SearchForm from '../../components/SearchForm';
 import Search from '../Search';
+import Perfil from '../Perfil';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <SearchForm />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/perfil" element={<Perfil />} />
           <Route path="/about" element={<About />} />
           <Route path="/products/:id" element={<Product />} />
           <Route path="/products/:id/info" element={<Info />} />

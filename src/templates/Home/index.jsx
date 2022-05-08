@@ -4,7 +4,15 @@ import * as Styled from '../Home/styles';
 // 4 - custom hook
 import { useFetch } from '../../hooks/useFetch';
 
+import ChangeCounter from '../../components/ChangeCounter';
+
+import { useCounterContext } from '../../hooks/useCounterContext';
+
+import { useTitleColorContext } from '../../hooks/useTitleColorContext';
+
 const Home = () => {
+  const { counter } = useCounterContext();
+  const { color, dispatch } = useTitleColorContext();
   const [products, setProducts] = useState([]);
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
@@ -56,10 +64,19 @@ const Home = () => {
   const handleRemove = (productId) => {
     httpConfig(productId, 'DELETE');
   };
+
+  const setTitleColor = (color) => {
+    dispatch({ type: color });
+  };
   return (
     <div>
       <Styled.Wrapper>
-        <h1>Lista com HTTP REQUEST</h1>
+        <h1 style={{ color: color }}>
+          Lista com HTTP REQUEST {counter} <ChangeCounter />
+        </h1>
+        <div>
+          <button onClick={() => setTitleColor('BLUE')}>Azul</button>
+        </div>
       </Styled.Wrapper>
       {loading && <p>Carregando Dados...</p>}
       {error && <p>{error}</p>}
