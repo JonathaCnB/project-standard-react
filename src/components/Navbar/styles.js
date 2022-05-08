@@ -11,6 +11,7 @@ export const Navbar = styled.nav`
       font-size: 1.2em;
     }
     .brand span {
+      font-family: ${theme.font.secondary};
       font-weight: 900;
       text-transform: uppercase;
     }
