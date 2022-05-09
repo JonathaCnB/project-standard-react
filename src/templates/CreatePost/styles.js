@@ -2,8 +2,13 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.white};
-    min-height: 60vh;
-    margin-bottom: 5em;
+    text-align: center;
+    h2 {
+      font-size: 2.2em;
+    }
+    p {
+      color: ${theme.colors.formGray};
+      margin-bottom: 2em;
+    }
   `}
 `;

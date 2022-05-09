@@ -6,6 +6,7 @@ import * as Styled from './styles';
 
 const Navbar = () => {
   const { user } = useAuthValue();
+  const { logout } = useAuthemtication();
   return (
     <Styled.Navbar>
       <NavLink
@@ -21,6 +22,14 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            Sobre
           </NavLink>
         </li>
         {!user && (
@@ -61,16 +70,11 @@ const Navbar = () => {
                 Painel
               </NavLink>
             </li>
+            <li>
+              <button onClick={logout}>Sair</button>
+            </li>
           </>
         )}
-        <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? 'active' : '')}
-          >
-            Sobre
-          </NavLink>
-        </li>
       </ul>
     </Styled.Navbar>
   );
