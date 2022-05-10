@@ -10,6 +10,9 @@ import Login from '../Login';
 import CreatePost from '../CreatePost';
 import Dashboard from '../Dashboard';
 import Register from '../Register';
+import Search from '../Search';
+import Post from '../Post';
+import EditPost from '../EditPost';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -48,6 +51,15 @@ function App() {
                 element={!user ? <Login /> : <Navigate to="/" />}
               />
               <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
+              <Route
+                path="/posts/:id"
+                element={user ? <Post /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/posts/edit/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
+              />
               <Route
                 path="/posts/create"
                 element={user ? <CreatePost /> : <Navigate to="/login" />}

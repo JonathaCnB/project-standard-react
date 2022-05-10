@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthValue } from '../../context/AuthContext';
 import * as Styled from './styles';
 import { useInsertDocument } from '../../hooks/useInsertDocument';
@@ -13,20 +14,36 @@ const CreatePost = () => {
   const [loading, setloading] = useState('');
   const { user } = useAuthValue();
   const { insertDocument, response } = useInsertDocument('posts');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError('');
-    const document = {
+
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError('A imagem precisa ser uma URL');
+    }
+
+    const tagsArray = tags.split(',').map((tag) => tag.trim().toLowerCase());
+
+    if (!title || !image || !tags || !body) {
+      setFormError('Por favor preencha todos os campos!');
+    }
+
+    if (formError) return;
+
+    insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
-      createBy: user.displayName,
-    };
-    const res = await insertDocument(document);
-    console.log(res);
+      createBy: user.email,
+    });
+
+    navigate('/');
   };
 
   return (
@@ -85,6 +102,7 @@ const CreatePost = () => {
         )}
 
         {response.error && <p className="container error">{response.error}</p>}
+        {formError && <p className="container error">{formError}</p>}
       </form>
     </Styled.Container>
   );

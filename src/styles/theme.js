@@ -6,6 +6,7 @@ export const theme = {
     gray: '#edf3f6',
     hoverGray: '#bbb',
     formGray: '#aaa',
+    secondGray: '#ccc',
     black: '#000',
     transparent: 'transparent',
     btnSuccess: '#1a8918',
