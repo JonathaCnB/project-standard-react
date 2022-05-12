@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { renderTheme } from '../styles/render-theme';
 
-import Home from '.';
+import App from '.';
 import { theme } from '../styles/theme';
 
 test('renders learn react link', () => {
-  renderTheme(<Home />);
+  renderTheme(<App />);
   const headingContainer = screen.getByRole('heading', {
     name: 'Hello Word',
   }).parentElement;

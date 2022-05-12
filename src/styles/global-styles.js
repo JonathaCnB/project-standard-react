@@ -9,6 +9,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     ${({ theme }) => css`
       background: ${theme.colors.secondaryBg};
+      text-align: center;
+      text-decoration: none;
     `}
   }
 `;
