@@ -1,5 +1,5 @@
 import * as Styled from './styles';
-function Home() {
+function App() {
   return (
     <div className="App">
       <Styled.Wrapper background="gold">
@@ -9,4 +9,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default App;
