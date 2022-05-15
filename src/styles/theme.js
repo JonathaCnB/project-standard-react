@@ -1,6 +1,9 @@
 export const theme = {
   colors: {
-    mainBg: 'red',
-    secondaryBg: 'blue',
+    mainBg: '#121212',
+    secondaryBg: '#121212',
+    primaryColor: '#fafafa',
+    primaryBlack: '#000',
+    primaryGray: '#363636',
   },
 };

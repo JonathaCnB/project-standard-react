@@ -9,6 +9,9 @@ export const GlobalStyles = createGlobalStyle`
   body {
     ${({ theme }) => css`
       background: ${theme.colors.secondaryBg};
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+      color: ${theme.colors.primaryColor};
     `}
   }
 `;
