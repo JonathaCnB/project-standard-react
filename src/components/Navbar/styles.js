@@ -17,9 +17,8 @@ export const Nav = styled.nav`
 
   #search-form svg {
     position: absolute;
-    top: 4px;
+    top: 10px;
     left: 9px;
-    color: #000;
   }
 
   #search-form input {
