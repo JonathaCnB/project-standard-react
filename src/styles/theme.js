@@ -12,5 +12,11 @@ export const theme = {
     sixthGray: '#999',
     blue: '#0094f6',
     white: '#fff',
+    errorMessage: '#721c24',
+    errorMessageBg: '#f8d7da',
+    errorMessageBorder: '#f5c6cb',
+    successMessage: '#155724',
+    successMessageBg: '#daedda',
+    successMessageBorder: '#c3e6cb',
   },
 };
