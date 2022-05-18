@@ -2,10 +2,16 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../Home';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
+import EditProfile from '../EditProfile';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { useAuth } from '../../hooks/useAuth';
 import * as Styled from './styles';
 function App() {
+  const { auth, loading } = useAuth();
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
   return (
     <div className="App">
       <Styled.Wrapper>
@@ -13,9 +19,22 @@ function App() {
           <Navbar />
           <Styled.Container>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              <Route
+                path="/"
+                element={auth ? <Home /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/profile"
+                element={auth ? <EditProfile /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/login"
+                element={!auth ? <Login /> : <Navigate to="/" />}
+              />
+              <Route
+                path="/register"
+                element={!auth ? <Register /> : <Navigate to="/" />}
+              />
             </Routes>
           </Styled.Container>
           <Footer />
