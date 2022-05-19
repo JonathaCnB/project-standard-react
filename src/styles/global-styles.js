@@ -1,15 +1,12 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
   body {
     ${({ theme }) => css`
       background: ${theme.colors.secondaryBg};
       font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
       color: ${theme.colors.primaryColor};
     `}
@@ -91,7 +88,7 @@ export const GlobalStyles = createGlobalStyle`
   input:disabled {
     cursor: not-allowed;
     ${({ theme }) => css`
-      background-color: ${theme.colors.black};
+      background-color: ${theme.colors.primaryBlack};
     `}
   }
 
