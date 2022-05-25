@@ -7,23 +7,16 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${({ theme }) => css`
+  ${({ theme, type }) => css`
     border: 1px solid ${theme.colors.primaryBlack};
+    color: ${type === 'error'
+      ? theme.colors.errorMessage
+      : theme.colors.successMessage};
+    background-color: ${type === 'error'
+      ? theme.colors.errorMessageBg
+      : theme.colors.successMessageBg};
+    border-color: ${type === 'error'
+      ? theme.colors.errorMessageBorder
+      : theme.colors.successMessageBorder};
   `}
-
-  .error {
-    ${({ theme }) => css`
-      color: ${theme.colors.errorMessage};
-      background-color: ${theme.colors.errorMessageBg};
-      border-color: ${theme.colors.errorMessageBorder};
-    `}
-  }
-
-  .success {
-    ${({ theme }) => css`
-      color: ${theme.colors.successMessage};
-      background-color: ${theme.colors.successMessageBg};
-      border-color: ${theme.colors.successMessageBorder};
-    `}
-  }
 `;

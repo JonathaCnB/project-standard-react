@@ -4,7 +4,7 @@ import * as Styled from './styles';
 
 const Message = ({ msg, type }) => {
   return (
-    <Styled.Container className={type}>
+    <Styled.Container type={type}>
       <p>{msg}</p>
     </Styled.Container>
   );
