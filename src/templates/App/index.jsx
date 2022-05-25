@@ -6,6 +6,7 @@ import EditProfile from '../EditProfile';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Profile from '../Profile';
+import Photo from '../Photo';
 import { useAuth } from '../../hooks/useAuth';
 import * as Styled from './styles';
 function App() {
@@ -31,6 +32,10 @@ function App() {
               <Route
                 path="/users/:id"
                 element={auth ? <Profile /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/photos/:id"
+                element={auth ? <Photo /> : <Navigate to="/login" />}
               />
               <Route
                 path="/login"
