@@ -7,6 +7,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Profile from '../Profile';
 import Photo from '../Photo';
+import Search from '../Search';
 import { useAuth } from '../../hooks/useAuth';
 import * as Styled from './styles';
 function App() {
@@ -36,6 +37,10 @@ function App() {
               <Route
                 path="/photos/:id"
                 element={auth ? <Photo /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/search"
+                element={auth ? <Search /> : <Navigate to="/login" />}
               />
               <Route
                 path="/login"
